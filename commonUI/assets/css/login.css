@@ -1,0 +1,60 @@
+.maincontent{
+  width : 50%;
+  padding: 0px;
+  border: 1px solid black;
+  margin-bottom: 160px;
+}
+
+.names{
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+.navy{
+ font-size: 30px;
+  font-family: 'Mada', sans-serif;
+}
+
+
+.firstname{
+  width: 100%;
+}
+
+.content-white{
+  background-color: white;
+  padding: 30px;
+}
+
+.lastname{
+  width :100%;
+  margin-right: 20px;
+}
+
+.username{
+  margin-top: 20px;
+}
+
+.phone{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.password-forgot{
+  width : 100%;
+  margin-top: 20px;
+  text-align: right; 
+  font-size:15px; ;
+}
+
+.password-forgot a:hover{
+  text-decoration:none;
+}
+
+.error{
+  margin-bottom: 10px;
+  font-size:17px ;
+  text-align: center;
+  color: red;
+}
+.cover{
+  margin-top: 160px;
+}

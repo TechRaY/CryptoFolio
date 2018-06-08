@@ -1,0 +1,15 @@
+.maincontent{
+  width : 50%;
+  padding: 0px;
+  border: 1px solid grey;
+  margin-bottom: 100px;
+}
+
+.content-white{
+  background-color: white;
+  padding: 30px;
+}
+
+.cover{
+  margin-top: 100px;
+}
