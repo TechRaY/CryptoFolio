@@ -73,7 +73,7 @@ $(document).ready(function() {
      <div class="form-group">
                <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-              <input type="email" class="form-control input-lg" name="EmailId" id="Email-Id" placeholder="user_id">
+              <input class="form-control input-lg" name="EmailId" id="Email-Id" placeholder="user_id">
               </div>
           </div>
 
@@ -87,9 +87,7 @@ $(document).ready(function() {
 
 
 
-          <div class="password-forgot">
-          <a href="#"><b>Forgot your password</b></a>
-          </div>
+          
 
 
           <div class="text-center">

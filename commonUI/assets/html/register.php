@@ -88,20 +88,10 @@ $(document).ready(function() {
 <div class="form-group">
   <div class="input-group">
  <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
- <input type="email" class="form-control input-lg" name="EmailId" id="Email" placeholder="user_id">
+ <input class="form-control input-lg" name="EmailId" id="Email" placeholder="user_id">
  </div>
 </div>
 
-<div class="form-group">
-    <textarea class="form-control" name="Address" id="Address"  rows="3" placeholder="Address"></textarea>
-</div>
-
-<div class="form-group">
-  <div class="input-group phone">
- <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
- <input type="tel" class="form-control input-lg" name="phne" id="phne"  placeholder="Contact No">
- </div>
-</div>
 
 
 

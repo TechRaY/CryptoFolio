@@ -28,7 +28,8 @@ if(!empty($username) && !empty($password)){
 
     if($json_array['success']==1)
     {
-        header("Location:../html/topics.php");
+        $_SESSION['user'] = $firstname;
+        header("Location:../../../Frontend/index.html");
     }
     else
     {

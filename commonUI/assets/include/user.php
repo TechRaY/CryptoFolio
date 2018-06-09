@@ -5,15 +5,15 @@ include_once 'db.php';
 class User{
 	
 	private $db;
-	private $db_table = "users";
+	private $db_table = "user_data";
 	
 	public function __construct(){
 		$this->db = new DbConnect();
 	}
 	
 	public function isLoginExist($username, $password){		
-				
-		$query = "select * from " . $this->db_table . " where Email = '$username' AND Password = '$password' Limit 1";
+		
+		$query = "select * from " . $this->db_table . " where u_id = '$username' AND u_pass = '$password' Limit 1";
 		$result = mysqli_query($this->db->getDb(), $query);
 		if(mysqli_num_rows($result) > 0){
 			mysqli_close($this->db->getDb());
@@ -23,11 +23,11 @@ class User{
 		return false;		
 	}
 	
-	public function createNewRegisterUser($firstname,$lastname, $email, $password,$address,$contact){
+	public function createNewRegisterUser($name, $uid, $password){
 
-
-			
-		$query = "insert into ". $this->db_table . "(First_Name, Last_Name, Email, Password, Contact, Address, created_at) values ('$firstname','$lastname',  '$email', '$password','$contact','$address',NOW())";
+		
+		
+		$query = "insert into ". $this->db_table . "(u_name,u_id,u_pass) values ('$name','$uid','$password')";
 
 		$inserted = mysqli_query($this->db->getDb(), $query);
 
