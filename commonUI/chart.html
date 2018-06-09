@@ -1,0 +1,48 @@
+<html>
+<head>
+	
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<p id="demo"></p>
+
+</body>
+
+<script>
+           
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        
+
+        $.each(myObj, function (key, value){
+        var obj = JSON.stringify(value);
+        var data = JSON.parse(obj);
+        $.each(data, function (key, value){
+        
+        console.log(key + " " + data[key]);
+        
+        });
+       //console.log(array);
+       return false;
+       });
+
+       
+       //document.write(myObj['']);
+}        
+};8
+
+xmlhttp.open("GET", "https://api.coindesk.com/v1/bpi/historical/close.json?start=2013-09-01&end=2013-09-05", true);
+xmlhttp.send();
+
+
+
+</script>
+
+<html>

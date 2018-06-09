@@ -92,7 +92,7 @@ $(document).ready(function() {
           <figure> <img class="img-responsive" src="assets/img/portfolio/bits1.jpg" alt="">
               <figcaption>
                 <h5>BitCoin</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>         <!--yahan par link change karna hai-->
+                <a  href="BTC.html" class="btn btn-default">Enter</a> </figcaption>         <!--yahan par link change karna hai-->
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->

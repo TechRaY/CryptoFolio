@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="Chart.bundle.js"></script>
+	<script src="utils.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<br>
+	<br>
+
+	<script>
+		var date = [];
+		var price = [];
+		
+		var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        
+
+        $.each(myObj, function (key, value){
+        var obj = JSON.stringify(value);
+        var data = JSON.parse(obj);
+        $.each(data, function (key, value){
+        
+        date.push(key);
+        price.push(data[key]);;
+        //console.log(array);
+       console.log(date[0]); 
+        });
+       console.log();
+       return false;
+       });
+
+       
+       //document.write(myObj['']);
+}        
+};
+
+xmlhttp.open("GET", "https://api.coindesk.com/v1/bpi/historical/close.json?start=2018-06-05&end=2018-06-09", true);
+xmlhttp.send();
+
+
+		var config = {
+			type: 'line',
+			data: {
+				labels: date,
+				datasets: [{
+					label: 'Trends in Bitcoin',
+					backgroundColor: window.chartColors.blue,
+					borderColor: window.chartColors.blue,
+					data: price,
+					fill: true,
+				}]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: 'CrptoCurrency Trends'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Time'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Price (USD)'
+						}
+					}]
+				}
+			}
+		};
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+		document.getElementById('randomizeData').addEventListener('click', function() {
+			config.data.datasets.forEach(function(dataset) {
+				dataset.data = dataset.data.map(function() {
+					return randomScalingFactor();
+				});
+			});
+			window.myLine.update();
+		});
+		
+	</script>
+</body>
+
+</html>
