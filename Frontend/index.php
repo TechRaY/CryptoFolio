@@ -5,10 +5,10 @@
 
 <?php
 
-$session_start();
+session_start();
 if($_SESSION['user'] == '')
 {
-    header("Location:../../index.php");
+    header("Location:../i111ndex.php");
 }
 
 ?>

@@ -22,8 +22,9 @@ if(isset($_POST['Submit']))
 
        if($json_registration['success']==1)
        {
+           session_start();
            $_SESSION['user'] = $firstname;
-           header("Location:../../../Frontend/index.html");
+           header("Location:../../../Frontend/index.php");
        }
        else
        {
