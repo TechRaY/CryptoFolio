@@ -324,65 +324,66 @@ def scoreTweets(all_tweets_scores,valuepolsub):
 	
 def main():
 	
-	value=pd.read_csv("Infosys/tweetsenti1.csv",index_col=0)
+	#value=pd.read_csv("Infosys/tweetsenti1.csv",index_col=0)
 	#create the sentiment dictionary using sentiwordnet 
 	
 	
-	
-	api = tweepy.API(auth)
-	public_tweets = api.search('tcs', lang = 'en', since_id = 1111111, count = 2000, retweeted = False)
-	public_tweets += api.search('infosys', lang = 'en', since_id = -1, count = 2000, retweeted = False)
-	public_tweets += api.search('NatarajanChandrasekaran', lang = 'en', since_id = -1, count = 2000, pages =20, retweeted = False)
-	public_tweets += api.search('Vishal Sikka', lang = 'en', since_id = -1, count = 2000, pages =20, retweeted = False)
-	public_tweets += api.search('TATA', lang = 'en', since_id = -1, count = 2000, pages =20, retweeted = False)
-
-	
-	scores_dict = create_dict()
-
-	'''
-	words = []
-	tweet_id_list = []
-	final_tweets = []
-	final_tweet_scores = list()
-
-	value['Tweets']=value.Tweets.values.reshape(-1,1)
-	value['Retweet_Count']=value.Retweet_Count.values.reshape(-1,1)
-	value['Sentiment_Polarity']=value.Sentiment_Polarity.values.reshape(-1,1)
-	value['Subjectivity']=value.Subjectivity.values.reshape(-1,1)
-	
-	length=len(value)
-	
-	'''
-	
-	for tweet in public_tweets:
-		analysis = TextBlob(tweet.text)
-		tokenized_tweets = tokenizeText(tweet.text, scores_dict)
-		sent=sentimentAnalysis(tokenized_tweets, scores_dict,tweet.retweet_count)
-		print(tweet.created_at+","+str(sent))
-		df = pd.DataFrame(data=[[tweet.created_at,sent]],columns=['Date','Sentiment'])
-		df.to_csv('SentiTweets.csv', mode='a', header=False)
+	while True:
 		
-	
-	time.sleep(40)
-	
-	'''
+		api = tweepy.API(auth)
+		public_tweets = api.search('bitcoin', lang = 'en', since_id = 1111111, count = 2000, retweeted = False)
+		public_tweets += api.search('$btc', lang = 'en', since_id = -1, count = 2000, retweeted = False)
+		public_tweets += api.search('#btc', lang = 'en', since_id = -1, count = 2000, pages =20, retweeted = False)
+		public_tweets += api.search('$bitcoin', lang = 'en', since_id = -1, count = 2000, pages =20, retweeted = False)
 		
-		#use this line instead for all tweets
-	#print "id = " + str(id) + " text = " + text + " num_followers = " + str(num_followers)
-	#get the score of the company
-	
-	company_score = scoreTweets(final_tweet_scores,value) * 1000
-	company_score = "{:10.3f}".format(company_score)
-	
-	if float(company_score) > 0:
-		print("Decision: Buy\nConsumer Sentiment: " + str(company_score.lstrip()) + '% +')
-	else:
-		print("Decision: Sell\nConsumer Sentiment: " + str(company_score.lstrip()) + '% -')
-
 
 		
-	'''	
+		scores_dict = create_dict()
+
+		'''
+		words = []
+		tweet_id_list = []
+		final_tweets = []
+		final_tweet_scores = list()
+
+		value['Tweets']=value.Tweets.values.reshape(-1,1)
+		value['Retweet_Count']=value.Retweet_Count.values.reshape(-1,1)
+		value['Sentiment_Polarity']=value.Sentiment_Polarity.values.reshape(-1,1)
+		value['Subjectivity']=value.Subjectivity.values.reshape(-1,1)
 		
+		length=len(value)
+		
+		'''
+		
+		for tweet in public_tweets:
+			analysis = TextBlob(tweet.text)
+			tokenized_tweets = tokenizeText(tweet.text, scores_dict)
+			sent=sentimentAnalysis(tokenized_tweets, scores_dict,tweet.retweet_count)
+			print(str(tweet.created_at)+","+str(sent))
+			df = pd.DataFrame(data=[[tweet.created_at,sent]],columns=['Date','Sentiment'])
+			df.to_csv('SentiTweets.csv', mode='a', header=False)
+			
+		print("1 set done")
+		time.sleep(40)
+		
+		'''
+			
+			#use this line instead for all tweets
+		#print "id = " + str(id) + " text = " + text + " num_followers = " + str(num_followers)
+		#get the score of the company
+		
+		company_score = scoreTweets(final_tweet_scores,value) * 1000
+		company_score = "{:10.3f}".format(company_score)
+		
+		if float(company_score) > 0:
+			print("Decision: Buy\nConsumer Sentiment: " + str(company_score.lstrip()) + '% +')
+		else:
+			print("Decision: Sell\nConsumer Sentiment: " + str(company_score.lstrip()) + '% -')
+
+
+			
+		'''	
+			
 main()
 
 
