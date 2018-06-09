@@ -37,10 +37,13 @@ $(document).ready(function() {
 
 
 .chatbot {
-      position: fixed;
-      top: 65%;
-      left: 90%;
-      -webkit-transform: translate(-50%, -50%);
+	
+    position: fixed;
+    left: 88%;
+    top: 68%;
+    width: 400px;
+    
+    -webkit-transform: translate(-50%, -50%);
     }
 
 </style>
@@ -78,7 +81,7 @@ $(document).ready(function() {
 <div class = "chatbot">
 
 <iframe
-    width="350"
+    width="400"
     height="430"
     src="https://console.dialogflow.com/api-client/demo/embedded/262df6f6-be58-4cf8-aa53-958b36f64052">
 </iframe>
