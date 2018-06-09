@@ -6,6 +6,8 @@ $firstname="";
 $lastname="";
 $username = "";
 $password = "";
+$contact="";
+$address="";
 $hashed_password="";
 
 if(isset($_POST['Submit']))
@@ -14,17 +16,17 @@ if(isset($_POST['Submit']))
   $lastname = $_POST['Lastname'];
   $username = $_POST['EmailId'];
   $password = $_POST['Password'];
-  
+  $contact=$_POST['phne'];
+  $address=$_POST['Address'];
+
   $userObject = new User();
   $hashed_password = md5($password);
-  $json_registration = $userObject->createNewRegisterUser($firstname." ".$lastname,$username, $hashed_password);
+  $json_registration = $userObject->createNewRegisterUser($firstname,$lastname,$username, $hashed_password,$address,$contact);
 
 
        if($json_registration['success']==1)
        {
-           session_start();
-           $_SESSION['user'] = $firstname;
-           header("Location:../../../Frontend/index.php");
+           header("Location:../html/topics.php");
        }
        else
        {

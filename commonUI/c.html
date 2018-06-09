@@ -16,8 +16,8 @@
 </head>
 
 <body>
-	<div style="width:75%;">
-		<canvas id="canvas"></canvas>
+	<div style="max-width:100%;">
+		<canvas id="canvas" style="max-width:100%;"></canvas>
 	</div>
 	<br>
 	<br>
@@ -61,10 +61,11 @@ xmlhttp.send();
 				labels: date,
 				datasets: [{
 					label: 'Trends in Bitcoin',
-					backgroundColor: window.chartColors.blue,
+					backgroundColor: window.chartColors.white,
 					borderColor: window.chartColors.blue,
 					data: price,
 					fill: true,
+					
 				}]
 			},
 			options: {

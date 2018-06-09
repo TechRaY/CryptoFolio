@@ -15,29 +15,6 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.sidenav {
-    width: 130px;
-    position: fixed;
-    z-index: 1;
-    top: 20px;
-    left: 10px;
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px ;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #2196F3;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: #064579;
-}
-
 .main {
     margin-left: 140px; /* Same width as the sidebar + left position in px */
     font-size: 28px; /* Increased text to enable scrolling */
@@ -50,7 +27,6 @@ body {
 }
 
 
-#canvas {border-style: solid;}
 
 </style>
 
@@ -64,10 +40,6 @@ body {
 <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
 <link rel="stylesheet" href="assets/css/loader2.css"  type="text/css"  />
 
-
-
-
-
 <script type="text/javascript">
 
 $(document).ready(function() {	
@@ -77,9 +49,7 @@ $(document).ready(function() {
 		$(".se-pre-con").fadeOut("slow");;
 	});
 	
-})
-
-      
+})    
 </script>
 </head>
 
@@ -108,28 +78,67 @@ $(document).ready(function() {
   </div>
 </div>
 
-
-
-
-
-
 <br/>
 <br/>
 <br/>
   
 <div class="main"> 
-  <h2>BTC-BITCOIN</h2>
+  <h1 style="text-align: center;">BTC-BITCOIN</h1>
+<div class="row" >
+  <div class="col-md-5" id ="content" style="
+    min-width: 50%;
+    padding: 0px;
+    height: 300px;
+    position: relative;
+   border-style: solid;">
+    <h3 style="text-align: center;">Last weeks CPI</h3>
+    <script>
 
-  <div id ="content">        
+$(document).ready( function() {
+        $("#content").load("c.html");
+    
+});
+   window.onload = function () {
+    window.__Bottr = { u: "597b11f4acf0a44bd859d384" };
+    var url = "https://d279m54f1qquet.cloudfront.net/embed/bottr.js?"
+     + Date.now();
+     var element = document.createElement("script");
+     element.id ="bottr-init-js";
+     element.type = "text/javascript";
+     element.dataset.cfasync = "false";
+     element.src = url;
+     document.getElementsByTagName("body")[0].appendChild(element);
+ }
+ </script>        
 </div>
-  <p>This sidebar is as tall as its content (the links), and is always shown.</p>
-  <p>Scroll down the page to see the result.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>    
 
+<div class=" col-md-5"  style=" min-width: 50%;    padding: 0px;    height: 300px; border-style: solid;">
+  <h3 style="text-align: center;">Current Read</h3>
+<script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/multi?fsyms=BTC,ETH,XRP,LTC,MIOTA&tsyms=INR,USD,EUR,GBP';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+</div>
+</div>
+<br>
+<br>
+  <p>
+    Bitcoin (₿) is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.The system works as a peer-to-peer network, in which transactions take place between users directly, without an intermediary. These transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. Bitcoin was invented by an unknown person or group of people using the name Satoshi Nakamoto and released as open-source software in 2009.
+
+Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies,products, and services. As of February 2015, over 100,000 merchants and vendors accepted bitcoin as payment.Research produced by the University of Cambridge estimates that in 2017, there were 2.9 to 5.8 million unique users using a cryptocurrency wallet, most of them using bitcoin
+</p>
+</div>    
 <div id="footerwrap">
   <div class="container">
     <div class="row">
@@ -147,32 +156,7 @@ $(document).ready(function() {
 </div>
 
 
-<script>
 
-$(document).ready( function() {
-        $("#content").load("c.html");
-    
-});
-
-
-   window.onload = function () {
-    window.__Bottr = { u: "597b11f4acf0a44bd859d384" };
-    var url = "https://d279m54f1qquet.cloudfront.net/embed/bottr.js?"
-     + Date.now();
-     var element = document.createElement("script");
-     element.id ="bottr-init-js";
-     element.type = "text/javascript";
-     element.dataset.cfasync = "false";
-     element.src = url;
-     document.getElementsByTagName("body")[0].appendChild(element);
-
- }
-
-
-
-
-
- </script>
 
 <script type="text/javascript" src="assets/js/retina.js"></script>
 <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
