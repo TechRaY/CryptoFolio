@@ -33,7 +33,17 @@ $(document).ready(function() {
 
 </script>
 	
+<style  type="text/css">
 
+
+.chatbot {
+      position: fixed;
+      top: 65%;
+      left: 90%;
+      -webkit-transform: translate(-50%, -50%);
+    }
+
+</style>
 	
 
 </head>
@@ -64,6 +74,20 @@ $(document).ready(function() {
   </div>
 </div>
 
+
+<div class = "chatbot">
+
+<iframe
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/262df6f6-be58-4cf8-aa53-958b36f64052">
+</iframe>
+
+
+</div>
+
+
+
 <!-- ==== HEADERWRAP ==== -->
 <div id="headerwrap" name="home">
   <header class="clearfix">
@@ -73,6 +97,7 @@ $(document).ready(function() {
     <a href="#portfolio" class="smoothScroll btn btn-lg">Explore</a> </header>
 </div>
 <!-- /headerwrap -->
+
 
 
 <!-- ==== PORTFOLIO ==== -->
