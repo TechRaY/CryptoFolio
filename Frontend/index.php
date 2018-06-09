@@ -8,7 +8,7 @@
 session_start();
 if($_SESSION['user'] == '')
 {
-    header("Location:../i111ndex.php");
+    header("Location:../../index.php");
 }
 
 ?>
@@ -27,15 +27,16 @@ if($_SESSION['user'] == '')
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap Core Css -->
-    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <!-- Waves Effect Css -->
     <link href="plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
     <link href="plugins/animate-css/animate.css" rel="stylesheet" />
-
+    
     <!-- Morris Chart Css-->
     <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
 
@@ -60,7 +61,29 @@ if($_SESSION['user'] == '')
 	{
 		margin-left:120px;
 	}
+
+    $
+    {
+        border : 2px solid black;
+    }
 	</style>
+
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+
+      $(document).ready(function(){
+
+        $("input").css({"border":"2px solid grey", "border-radius":"3px"});
+        $("select").css({"border":"2px solid grey", "border-radius":"3px"});
+
+      });
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+      </script>
 </head>
 
 <body class="theme-red">
@@ -288,163 +311,24 @@ if($_SESSION['user'] == '')
 
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>DASHBOARD</h2>
+        <div class="add_pf row clearfix">
+            <div class="col-md-offset-5 col-md-3">
+                <button type="button" onclick="add_pf()" class="btn btn-primary btn-lg btn-block">Add Portfolio</button>
             </div>
-
-            <!-- Widgets -->
-          
-            <!-- #END# Widgets -->
-            <!-- CPU Usage -->
-            
-            <!-- #END# CPU Usage -->
-			
-			
-			
-            <div class="row clearfix">
-                <!-- Visitors -->
-                <!-- Latest Social Trends -->
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="card">
-                        <div class="body bg-cyan">
-                            <div class="m-b--35 font-bold" style="text-align:-webkit-center;">BUY</div>
-                            <ul class="dashboard-stat-list" id="buy1">
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Latest Social Trends -->
-                <!-- Answered Tickets -->
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="card">
-                        <div class="body bg-teal">
-                            <div class="m-b--35 font-bold" style="text-align:-webkit-center;">SELL</div>
-                            <ul class="dashboard-stat-list" id="sell1">
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Answered Tickets -->
-            </div>
-
-            <div class="row clearfix">
-                <!-- Task Info -->
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                    <div class="card">
-                        <div class="header">
-                            <h2>TASK INFOS</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="table table-responsive">
-                                <table class="table table-hover dashboard-task-infos">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Algorithm</th>
-                                            <th>News</th>
-                                            <th>Trends</th>
-                                            <th>Risk</th>
-                                            <th>Selling</th>
-                                            <th>Mutual Fund</th>
-                                            <th>Accuracy</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Algorithm A</td>
-                                            <td>20%</td>
-                                            <td>20%</td>
-                                            <td>20%</td>
-                                            <td>20%</td>
-                                            <td>20%</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Algorithm B</td>
-                                            <td>10%</td>
-                                            <td>20%</td>
-                                            <td>30%</td>
-                                            <td>10%</td>
-                                            <td>30%</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Algorithm C</td>
-                                            <td>30%</td>
-                                            <td>30%</td>
-                                            <td>10%</td>
-                                            <td>20%</td>
-                                            <td>10%</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Algorithm D</td>
-                                            <td>15%</td>
-                                            <td>25%</td>
-                                            <td>20%</td>
-                                            <td>25%</td>
-                                            <td>15%</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Task Info -->
-                <!-- Browser Usage -->
-                
-                <!-- #END# Browser Usage -->
-            </div>
-        </div>
+        </div> 
+    </div>
     </section>
 
-    <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+   
 
-    <!-- Bootstrap Core Js -->
-    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+   
+   
 
     <!-- Slimscroll Plugin Js -->
     <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -480,10 +364,118 @@ if($_SESSION['user'] == '')
     <script src="js/demo.js"></script>
     <script src="js/custom.js"></script>
 	
-	<script>
-	
-	
-	</script>
+
+    <!--My script-->
+	<script type="text/javascript">
+
+    function add_pf()
+    {
+        $('#myModal').modal('show'); 
+    }
+    </script>
+    
+
+<!-- modal here -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Make a Portfolio
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+             <form class="form-horizontal" role="form" id="my_form">
+                        <div class="form-group">
+                            <label for="type">Select Cryptocurrency</label>
+                                <select class="form-control" id="type">
+                                    <option>BITCOIN</option>
+                                    <option>LITECOIN</option>
+                                    <option>IOTA</option>
+                                    <option>ETHERIUM</option>
+                                    <option>RIPPLE</option>
+                                </select>
+                        </div>
+
+                            <hr/>
+                        
+                        <div class="form-group">
+                            <label for="place">Select Exchange</label>
+                                <select class="form-control"  id="place">
+                                    <option>COINBASE</option>
+                                    <option>BITBAY</option>
+                                    <option>ABUCOINS</option>
+                                    <option>COINSBANK</option>
+                                </select>
+                        </div>
+
+                            <hr/>
+
+                        <div class="form-group">
+                            <label for="quant">Input Quantity</label>
+                            <br/>
+                            <input type="number" class="form-control" placeholder="Quantity" id="buy_quant" required />
+                        </div>
+
+                            <hr/>
+
+                        <div class="form-group">
+                            <label for="exrt">Amount</label>
+                            <br/>
+                            <input type="number" class="form-control" placeholder="Price" id="buy_exrt" required>
+                        </div>
+                        
+                         <hr/>
+
+                        <div class="form-group"> 
+                            <label for="datepicker">Date</label>
+                            <br/>
+                            <input type="date" id="datepicker">
+                        </div>  
+
+                         <hr/>
+  
+                        <div class="form-group">
+                            <label for="bs">Trade Type</label>
+                                <select class="form-control"  id="bs">
+                                    <option>BUY</option>
+                                    <option>SELL</option>
+                                </select>
+                        </div>
+        </form>   
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 </body>
 </html>
+
+
