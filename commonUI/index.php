@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>CryptoFolio</title>
+<title>Crypto-Folio</title>
 
 
 <link href="assets/css/style.css" rel="stylesheet">
@@ -33,7 +33,20 @@ $(document).ready(function() {
 
 </script>
 	
+<style  type="text/css">
 
+
+.chatbot {
+	
+    position: fixed;
+    left: 88%;
+    top: 68%;
+    width: 400px;
+    
+    -webkit-transform: translate(-50%, -50%);
+    }
+
+</style>
 	
 
 </head>
@@ -64,15 +77,30 @@ $(document).ready(function() {
   </div>
 </div>
 
+
+<div class = "chatbot">
+
+<iframe
+    width="400"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/262df6f6-be58-4cf8-aa53-958b36f64052">
+</iframe>
+
+
+</div>
+
+
+
 <!-- ==== HEADERWRAP ==== -->
 <div id="headerwrap" name="home">
   <header class="clearfix">
-    <h1>Learn, Practice, Test, Excel.</h1>
-    <p><b>It's Online.It's Conceptual Learning.It's for Monk Like You.<br>
-      Prepare for Recruitment Tests, Competitive Programming Contests, GATE Exams,....</p>
+    <h1>Learn, Visualise, Manage, Profitise.</h1>
+    <p><b>It's Online.It's Logical Understanding.It's for Bravado People Like You.<br>
+      Prepare for Shortcomings,Before it actually comes ....</p>
     <a href="#portfolio" class="smoothScroll btn btn-lg">Explore</a> </header>
 </div>
 <!-- /headerwrap -->
+
 
 
 <!-- ==== PORTFOLIO ==== -->
@@ -92,7 +120,7 @@ $(document).ready(function() {
           <figure> <img class="img-responsive" src="assets/img/portfolio/bits1.jpg" alt="">
               <figcaption>
                 <h5>BitCoin</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>         <!--yahan par link change karna hai-->
+                <a  href="BTC.html" class="btn btn-default">Learn More</a> </figcaption>         <!--yahan par link change karna hai-->
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -107,7 +135,7 @@ $(document).ready(function() {
             <figure> <img c`lass="img-responsive" src="assets/img/portfolio/lite1.jpg" alt="">
               <figcaption>
                 <h5>LiteCoin</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>
+                <a  href="#" class="btn btn-default">Learn More</a> </figcaption>
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -121,7 +149,7 @@ $(document).ready(function() {
             <figure> <img class="img-responsive" src="assets/img/portfolio/eth1.jpg" alt="">
               <figcaption>
                 <h5>Ethereum</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>
+                <a  href="#" class="btn btn-default">Learn More</a> </figcaption>
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -138,7 +166,7 @@ $(document).ready(function() {
             <figure> <img class="img-responsive" src="assets/img/portfolio/ripple1.jpg" alt="">
               <figcaption>
                 <h5>Ripple</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>
+                <a  href="#" class="btn btn-default">Learn Mo</a> </figcaption>
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -152,7 +180,7 @@ $(document).ready(function() {
             <figure> <img class="img-responsive" src="assets/img/portfolio/iota1.jpg" alt="">
               <figcaption>
                 <h5>IOTA</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>
+                <a  href="#" class="btn btn-default">Learn More</a> </figcaption>
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -166,7 +194,7 @@ $(document).ready(function() {
             <figure> <img class="img-responsive" src="assets/img/portfolio/z1.jpg" alt="">
               <figcaption>
                 <h5>Zcash</h5>
-                <a  href="#" class="btn btn-default">Enter</a> </figcaption>
+                <a  href="#" class="btn btn-default">Learn More</a> </figcaption>
               <!-- /figcaption -->
             </figure>
             <!-- /figure -->
@@ -195,31 +223,25 @@ $(document).ready(function() {
       </div>
 
       <a href="assets/html/topics.php">
-      <div class="col-lg-3 callout"> <i class="fa fa-desktop fa-3x"></i>
-        <h3>portfolio management</h3>
-        <p>Complete solution to manage your money.</p>
+      <div class="col-lg-4 callout"> <i class="fa fa-desktop fa-4x"></i>
+        <h3>Portfolio Management</h3>
+        <p>Complete solution to manage your wallet,your digital currency.</p>
       </div></a>
 
       <a data-toggle="modal"  href="#myModal">             <!--Session se redirection karna hai ya toh login/register karwana hai -->
-        <div class="col-lg-3 callout"> <i class="fa fa-graduation-cap  fa-3x"></i>
-        <h3>trend analysis</h3>
-        <p>Get to know current trend about crypt </p>
+        <div class="col-lg-4 callout"> <i class="fa fa-graduation-cap  fa-4x"></i>
+        <h3>Trend Analysis</h3>
+        <p>Get to know current trend about your CryptoCurrency</p>
       </div>
     </a>
 
-      <a href="assets/html/videolec.php">
-      <div class="col-lg-3 callout"> <i class="fa fa fa-video-camera fa-3x"></i>
-        <h3>sentiment analysis</h3>
-        <p>day to day market strategies </p>
+      <a href="#">
+      <div class="col-lg-4 callout"> <i class="fa fa fa-video-camera fa-4x"></i>
+        <h3>Sentiment Analysis</h3>
+        <p>Understand the general behaviour of people on your cryptocurrency through Twitter Data, News Data, and Reddit Data Analysis </p>
       </div>
       </a>
 
-      <a href="assets/html/interviewexperience.php">
-      <div class="col-lg-3 callout"> <i class="fa fa-gears fa-3x"></i>
-        <h3>arbitrage trading</h3>
-        <p>Earn more profit at best suggestions.</p>
-      </div>
-    </a>
 
     </div>
     <!-- row -->
@@ -267,11 +289,11 @@ require_once("assets/html/commonmodal.php");
         <p>Developer</p>
         <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> </div>
       <div class="col-lg-4 centered"> <img class="img img-circle" src="assets/img/team/ravi.jpg" height="120px" width="120px" alt="">
-        <h4>Ravi Yadav</h4>
+        <h4>Sumeet Sapla</h4>
         <p>Developer</p>
         <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> </div>
       <div class="col-lg-8 col-lg-offset-2 centered">
-        <p class="large"><h1 style="color:white"><b>We Are Good For Nothing.</h1></p>
+        <p class="large"><h1 style="color:white"><b>Go For It.</h1></p>
       </div>
     </div>
   </div>
@@ -287,7 +309,7 @@ require_once("assets/html/commonmodal.php");
       <hr>
       <div class="col-md-4 centered"> <i class="fa fa-map-marker fa-2x"></i>
         <p>321 Awesome Street<br>
-          Badlapur, Shahad 17022</p>
+          Thane, Maharashtra 17022</p>
       </div>
       <div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
         <p>info@cryptoFolio.com</p>
