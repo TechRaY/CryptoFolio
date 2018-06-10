@@ -49,6 +49,7 @@ $(document).ready(function() {
           <li><a href="../../index.php" >Home</a></li>
           <li><a href="cryptocurrencies.php" >coins</a></li>
           <li> <a href=""> Register/Login</a></li>
+           <li><div id="google_translate_element"></div></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -57,7 +58,13 @@ $(document).ready(function() {
 </div>
 
 
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <div class="cover">
              <div class="jumbotron container-fluid maincontent">
 
