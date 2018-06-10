@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
+
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"
 <title>CryptoFolio</title>
   <script src="Chart.bundle.js"></script>
   <script src="utils.js"></script>
 <style>
 
 
+#footerwrap {
+    background: #2b2b2b;
+    padding: 25px 0 15px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    height: 70px;
+}
+
+#cont{
+font-family: 'Kanit', sans-serif;
+}
+
 body {
-    font-family: "Lato", sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 .main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    margin-left: 20px; /* Same width as the sidebar + left position in px */
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
@@ -29,6 +43,7 @@ body {
 
 
 </style>
+
 
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
@@ -52,6 +67,13 @@ $(document).ready(function() {
 })    
 </script>
 </head>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <div class="se-pre-con"></div>
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
@@ -71,6 +93,7 @@ $(document).ready(function() {
           <li> <a href="#team" class="smoothScroll"> Team</a></li>
           <li> <a href="#contact" class="smoothScroll"> Contact</a></li>
           <li> <a href="assets/html/register.php"> Register/Login</a></li>
+          <li><div id="google_translate_element"></div></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -133,14 +156,16 @@ embedder.parentNode.appendChild(s);
 </div>
 <br>
 <br>
-  <p>
+<div id = "cont">
+ <p> 
     Bitcoin (₿) is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.The system works as a peer-to-peer network, in which transactions take place between users directly, without an intermediary. These transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. Bitcoin was invented by an unknown person or group of people using the name Satoshi Nakamoto and released as open-source software in 2009.
-
+</p>
+<p>
 Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies,products, and services. As of February 2015, over 100,000 merchants and vendors accepted bitcoin as payment.Research produced by the University of Cambridge estimates that in 2017, there were 2.9 to 5.8 million unique users using a cryptocurrency wallet, most of them using bitcoin
 </p>
 </div>    
-<div id="footerwrap">
-  <div class="container">
+<div id="footerwrap" >
+  <div class="container" >
     <div class="row">
       <div class="col-md-8"> <span class="copyright">Copyright &copy; friends.group. Design by rrrm@company</div>
       <div class="col-md-4">
@@ -154,7 +179,6 @@ Bitcoins are created as a reward for a process known as mining. They can be exch
     </div>
   </div>
 </div>
-
 
 
 

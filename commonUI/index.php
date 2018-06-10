@@ -57,13 +57,20 @@ $(document).ready(function() {
           <li> <a href="#team" class="smoothScroll"> Team</a></li>
           <li> <a href="#contact" class="smoothScroll"> Contact</a></li>
           <li> <a href="assets/html/register.php"> Register/Login</a></li>
+           <li><div id="google_translate_element"></div></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
 </div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!-- ==== HEADERWRAP ==== -->
 <div id="headerwrap" name="home">
   <header class="clearfix">
