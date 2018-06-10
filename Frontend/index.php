@@ -72,9 +72,64 @@ if($_SESSION['user'] == '')
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
       <script>
+      
+    
+function fetch_table(api_val)
+{
+        var ar = ["BITCOIN","ETHERIUM","IOTA","LITECOIN","RIPPLE"];
+        var quant = [];
+        var market_cap = [];
+        var net_cash = [];
+        
+        for (var i = 0; i < 5; i++) {
+            quant[i] = get_purchased(ar[i]);
+            market_cap[i] = quant[i]*api_val[i];
+            net_cash[i] = invested(ar[i]);
+        }
+
+        var box = "<div class=\"container-fluid\"><div class=\"row clearfix\"><div class=md-10><table class=\"table table-bordered table-striped\"><thead><tr><th>Sr. No. </th><th>Type</th><th>Quantity</th><th>Current Market Value</th><th>Total Investment Till Date</th><th>Alerts</th></tr></thead><tbody>";
+
+      for (var i = 0; i < 5; i++) {
+        box += "<tr><td>"+(i+1)+"</td><td>"+ar[i]+"</td><td>"+quant[i]+"</td><td>"+market_cap[i]+"</td><td>"+net_cash[i]+"</td><td>"+(i+1)+"</td></tr>";
+      }
+
+      box += "</tbody></table></div><div class=md-2></div></div></div>";
+      $("#table1").html("");
+      $("#table1").append(box);
+
+
+}
 
       $(document).ready(function(){
+    var mkt_val = [1,1,1,1,1];
+    fetch_table(mkt_val);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            console.log(myObj["USD"]);
+            mkt_val.push(myObj["USD"]);
+
+        }
+    };
+
+        var shfts = ["BTC","ETH","MIOTA","LTC","XRP"]
+        
+        var i = 0;
+        window.setInterval(function(){
+                mkt_val = []
+                for(i=0;i<5;i++){
+                xmlhttp.open("GET", "https://min-api.cryptocompare.com/data/price?fsym="+shfts[i]+"&tsyms=BTC,USD,EUR", true);
+                xmlhttp.send();
+        }
+            
+            fetch_table(mkt_val);
+    }, 10000);
+
+
 
         $("input").css({"border":"2px solid grey", "border-radius":"3px"});
         $("select").css({"border":"2px solid grey", "border-radius":"3px"});
@@ -310,6 +365,11 @@ if($_SESSION['user'] == '')
     </section>
 
     <section class="content">
+       
+
+        <div class="table1" id="table1">
+        </div>
+
         <div class="container-fluid">
         <div class="add_pf row clearfix">
             <div class="col-md-offset-5 col-md-3">
@@ -423,7 +483,7 @@ if($_SESSION['user'] == '')
                         <div class="form-group">
                             <label for="quant">Input Quantity</label>
                             <br/>
-                            <input type="number" class="form-control" placeholder="Quantity" id="buy_quant" required />
+                            <input type="number" class="form-control" placeholder="Quantity" id="quant" required />
                         </div>
 
                             <hr/>
@@ -431,7 +491,7 @@ if($_SESSION['user'] == '')
                         <div class="form-group">
                             <label for="exrt">Amount</label>
                             <br/>
-                            <input type="number" class="form-control" placeholder="Price" id="buy_exrt" required>
+                            <input type="number" class="form-control" placeholder="Price" id="exrt" required>
                         </div>
                         
                          <hr/>
@@ -464,7 +524,7 @@ if($_SESSION['user'] == '')
                         data-dismiss="modal">
                             Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary" onclick="send_data()">
                     Submit
                 </button>
             </div>
@@ -476,6 +536,109 @@ if($_SESSION['user'] == '')
 
 
 </body>
+
+
+
+<script>
+
+
+
+function get_purchased(ar)
+{
+    var ans=0;
+     $.ajax({
+        url   : "php/get_quant.php",
+        type  : "POST",
+        async : false,
+        data  : {
+                  "curr" : ar ,
+                },
+        success: function(data)
+        {
+           ans = data;
+        }
+});
+     return ans;
+}
+
+function invested(ar)
+{
+    var ans=0;
+    $.ajax({
+        url   : "php/get_invested.php",
+        type  : "POST",
+        async : false,
+        data  : {
+                  "curr" : ar ,
+                },
+        success: function(data)
+        {
+           ans = data;
+        }
+});
+    return ans;
+}
+
+
+function send_data()
+{
+      var curr = $('#type option:selected').val();
+      var exc = $('#place option:selected').val();
+      var quant = $('#quant').val();
+      var amt = $('#exrt').val();
+      var dt = $('#datepicker').val();
+      var bs = $('#bs option:selected').val();
+      var buy = 0;
+      
+      if(bs === "BUY")
+      buy = 1;
+      else
+      {
+
+        nums = get_purchased(curr);
+        if(nums < quant)
+        {
+            alert("You dont have enough "+curr+" to sell");
+            return;
+        }
+
+
+      }
+
+      $.ajax({
+        url   : "php/insert_trans.php",
+        type  : "POST",
+        async : false,
+        data  : {
+                  "curr" : curr ,
+                  "exc"  : exc ,
+                  "quant"  : quant ,
+                  "amt" : amt,
+                  "dt" : dt,
+                  "buy" : buy
+                },
+        success: function(data)
+        {
+           alert(data);
+           fetch_table();
+           $('#myModal').modal('hide');
+           fetch_table();
+        }
+});
+}
+
+
+</script>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
