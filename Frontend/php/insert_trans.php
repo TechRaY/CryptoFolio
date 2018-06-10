@@ -11,6 +11,8 @@
         $uid = $_SESSION['user'];
         $sell = 1-$buy;
 
+		echo $uid;
+		
         $sql = "INSERT INTO logs(u_id,c_type,qty,c_price,tym,buy,sell) VALUES ('$uid','$curr','$quant','$amt','$dt','$buy','$sell')";
     	$res = mysqli_query($con,$sql);
     	if(!$res)

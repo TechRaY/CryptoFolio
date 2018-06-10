@@ -333,15 +333,15 @@ function fetch_table(api_val)
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">Stocks</li>
+                    <li class="header"></li>
                     <li class="active">
-                        <a href="index.html">
-							<span>Infosys</span>
+                        <a href="analysis.php">
+							<span>Analysis Page</span>
                         </a>
                     </li>
                     <li>
                         <a href="index.html">
-							<span>TCS</span>
+							
                         </a>
                     </li>
 					
