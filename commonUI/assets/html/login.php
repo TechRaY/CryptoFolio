@@ -47,7 +47,7 @@ $(document).ready(function() {
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../../index.php" >Home</a></li>
-          <li><a href="cryptocurrencies.php" >coins</a></li>
+          <li><a href="cryptocurrencies.php" >CryptoCurrencies</a></li>
           <li> <a href=""> Register/Login</a></li>
         </ul>
       </div>
