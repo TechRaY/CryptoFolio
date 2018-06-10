@@ -1,0 +1,2 @@
+run again fr tcs data and do the necessary changes in the crawler_reuters.py
+tickerList need to be updated with the TCS data

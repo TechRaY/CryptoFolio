@@ -49,7 +49,6 @@ $(document).ready(function() {
           <li><a href="../../index.php" >Home</a></li>
           <li><a href="cryptocurrencies.php" >coins</a></li>
           <li> <a href=""> Register/Login</a></li>
-            <li><div id="google_translate_element"></div></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -64,21 +63,8 @@ $(document).ready(function() {
           <ul class="nav nav-tabs nav-justified navy">
             <li role="presentation" id="signupitem"  ><a href="register.php">Register</a></li>
             <li role="presentation" id="loginitem" class="active"><a href="#">Login</a></li>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </ul>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       <div class="content-white">
 
       <form id="loginform" method="POST" action="../php/logincheck.php">
@@ -87,7 +73,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
      <div class="form-group">
                <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-              <input type="email" class="form-control input-lg" name="EmailId" id="Email-Id" placeholder="user_id">
+              <input class="form-control input-lg" name="EmailId" id="Email-Id" placeholder="user_id">
               </div>
           </div>
 
@@ -101,9 +87,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 
 
 
-          <div class="password-forgot">
-          <a href="#"><b>Forgot your password</b></a>
-          </div>
+          
 
 
           <div class="text-center">

@@ -5,7 +5,7 @@ include_once 'db.php';
 class User{
 	
 	private $db;
-	private $db_table = "users";
+	private $db_table = "user_data";
 	
 	public function __construct(){
 		$this->db = new DbConnect();
@@ -13,7 +13,7 @@ class User{
 	
 	public function isLoginExist($username, $password){		
 				
-		$query = "select * from " . $this->db_table . " where Email = '$username' AND Password = '$password' Limit 1";
+		$query = "select * from " . $this->db_table . " where u_id = '$username' AND u_pass = '$password' Limit 1";
 		$result = mysqli_query($this->db->getDb(), $query);
 		if(mysqli_num_rows($result) > 0){
 			mysqli_close($this->db->getDb());

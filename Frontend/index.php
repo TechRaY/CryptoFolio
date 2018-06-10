@@ -74,12 +74,15 @@ if($_SESSION['user'] == '')
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+
+
       <script>
       
     
 function fetch_table(api_val)
 {
         var ar = ["BITCOIN","ETHERIUM","IOTA","LITECOIN","RIPPLE"];
+        var shfts = ["BTC","ETH","MIOTA","LTC","XRP"]
         var quant = [];
         var market_cap = [];
         var net_cash = [];
@@ -93,7 +96,7 @@ function fetch_table(api_val)
         var box = "<div class=\"container-fluid\"><div class=\"row clearfix\"><div class=md-10><table class=\"table table-bordered table-striped\"><thead><tr><th>Sr. No. </th><th>Type</th><th>Quantity</th><th>Current Market Value</th><th>Total Investment Till Date</th><th>Alerts</th></tr></thead><tbody>";
 
       for (var i = 0; i < 5; i++) {
-        box += "<tr><td>"+(i+1)+"</td><td>"+ar[i]+"</td><td>"+quant[i]+"</td><td>"+market_cap[i]+"</td><td>"+net_cash[i]+"</td><td>"+(i+1)+"</td></tr>";
+        box += "<tr><td>"+(i+1)+"</td><td><a href=\"#graph\" onclick=\"make_graph("+shfts[i]+")\">"+ar[i]+"</a></td><td>"+quant[i]+"</td><td>"+market_cap[i]+"</td><td>"+net_cash[i]+"</td><td>"+(i+1)+"</td></tr>";
       }
 
       box += "</tbody></table></div><div class=md-2></div></div></div>";
@@ -376,7 +379,32 @@ function fetch_table(api_val)
                 <button type="button" onclick="add_pf()" class="btn btn-primary btn-lg btn-block">Add Portfolio</button>
             </div>
         </div> 
-    </div>
+        </div>
+
+        <div class="container-fluid make_graph" id="graph">
+            <script type="text/javascript">
+
+            function make_graph(str)
+            {
+                
+                baseUrl = "https://widgets.cryptocompare.com/";
+                var scripts = document.getElementsByTagName("script");
+                var embedder = scripts[ scripts.length - 1 ];
+                (function (){
+                var appName = encodeURIComponent(window.location.hostname);
+                if(appName==""){appName="local";}
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                var theUrl = baseUrl+'serve/v3/coin/chart?fsym='+str+'&tsyms=USD,EUR,CNY,GBP';
+                s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                embedder.parentNode.appendChild(s);
+                })();
+            }
+            </script>
+
+            
+        </div>
     </section>
 
    
