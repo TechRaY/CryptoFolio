@@ -1,5 +1,5 @@
 # CryptoFolio
-The Ultimate Crypto Challenge Hackathon ( 36 hrs :) )
+The Ultimate Cryptocurrency Challenge Hackathon ( 36 hrs :) )
 
 Problem Statement: There are about more than 100 cryptocurrencies which are used by a investor/user. This large number and variety makes it difficult to understand it and manage the purchases and the holdings by the user. Also keeping track of different rates at various coin exchange markets is a cumbersome task. 
 
@@ -18,4 +18,5 @@ API's Used : 1)Coinberg Api 2)Cryptocompare Api 3)Twitter Api 4)Google Oauth Api
 Papers Referred : 1)Cryptocurrency Pumping Predictions: A Novel Approach to Identifying Pump And Dump Schemes http://cs229.stanford.edu/proj2017/final-reports/5231579.pdf
 2)Combination of Convolutional and Recurrent Neural Network for Sentiment Analysis of Short Texts http://www.aclweb.org/anthology/C16-1229
 
-Requirements (Python packages): Keras, Tensorflow, Numpy, Scipy, Pandas, Tweepy, Beautiful Soup, LDA packages, Requests, etc.   
+Requirements (Python packages): Keras, Tensorflow, Numpy, Scipy, Pandas, Tweepy, Beautiful Soup, LDA packages, Requests, etc.
+And a hell lot of Caffeine to remain wake up throughout :) . 
