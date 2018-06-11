@@ -1,1 +1,6 @@
 glove embedding file to be uploaded.
+
+
+https://nlp.stanford.edu/projects/glove/ -----> glove.840B.300d.zip   worked with this Embedding file.
+
+Can check out with Google-News Vector model also to analyse and work out. Was unable to try this wirk due to shortage of time.
