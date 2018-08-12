@@ -6,7 +6,7 @@ Problem Statement: There are about more than 100 cryptocurrencies which are used
 Problems that we addressed during the competition : 1)Avoiding Naive traders from falling in the trap of Pump and Dump. 2) Helping users to get familiarised with Cryptocurrencies. 3)Correlation of Public Sentiments and Cryptocurrency prices along with historical trends.
 4)Real time tracking of multiple portfolios simultaneously. 5)Real time charts and alerts.
 
-Our Approach : Combined Approach -> 1)Sentiment Analysis 2)Trend Forecasting 3)Better Visulaization of Data with Analysis Reports.  
+Our Approach : Combined Approach -> 1)Sentiment Analysis 2)Trend Forecasting 3)Better Visualization of Data with Analysis Reports.  
 
 DataSet Used: 1)NewsFeed (moneycontol.com, reuters.com) 2)Reddit Feed 3)Twitter Feeds 4)TimeSeries Data from coinmarketcap.com
 
